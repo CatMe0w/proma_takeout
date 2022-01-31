@@ -48,11 +48,6 @@ def make_emoticon_list():
     return emoticon_list
 
 
-def download_album(content):
-    for image in content:
-        download_and_save(image['url'])
-
-
 def main():
     logging.basicConfig(
         format='%(asctime)s [%(levelname)s] %(message)s',
@@ -84,7 +79,7 @@ def main():
         biglist.append(row[0])
 
     conn.close()
-    biglist = list(set(biglist))
+    biglist = list(set(biglist))  # Dedup
 
     logging.info('''
     Starting proma_takeout
