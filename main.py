@@ -13,13 +13,13 @@ session.mount('https://', requests.adapters.HTTPAdapter(pool_maxsize=16, max_ret
 
 def get(url):
     response = session.get(url)
-    logging.info('Downloaded ' + url)
     if response.status_code == 200:
+        logging.info('Downloaded ' + url)
         with open('assets/' + response.url.split('&')[-1].split('/')[-1].split('?')[0].split('=')[-1], 'wb') as f:
             f.write(response.content)
     else:
         logging.error('Error downloading %s: %s', url, response.status_code)
-    return response
+    return
 
 
 def download_and_save(urls):
@@ -89,6 +89,7 @@ def main():
     Weigh anchor!
     '''.format(len(biglist)))
     download_and_save(biglist)
+    logging.info('All done! Have fun!')
 
 
 if __name__ == '__main__':
