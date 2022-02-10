@@ -78,6 +78,10 @@ def main():
     for row in signatures:
         biglist.append(row[0])
 
+    avatars = db.execute('select avatar from user')
+    for row in avatars:
+        biglist.append('https://himg.bdimg.com/sys/portraith/item/' + row[0].split('?')[0] + '.jpg')
+
     conn.close()
     biglist = list(set(biglist))  # Dedup
 
