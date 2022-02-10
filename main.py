@@ -84,7 +84,7 @@ def main():
     logging.info('''
     Starting proma_takeout
     
-    Total items: %s
+    Total items: {}
     
     Weigh anchor!
     '''.format(len(biglist)))
