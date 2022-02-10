@@ -33,6 +33,8 @@ def make_emoticon_list():
         emoticon_list.append('https://tb2.bdstatic.com/tb/editor/images/client/image_emoticon' + str(emoticon_id) + '.png')
     for emoticon_id in range(61, 102):  # 移动端新版泡泡
         emoticon_list.append('https://tb2.bdstatic.com/tb/editor/images/client/image_emoticon' + str(emoticon_id) + '.png')
+    for emoticon_id in range(129, 133):  # 不明
+        emoticon_list.append('https://tb2.bdstatic.com/tb/editor/images/client/image_emoticon' + str(emoticon_id) + '.png')
     for emoticon_id in range(1, 52):  # 旧版泡泡
         emoticon_list.append('https://img.baidu.com/hi/face/i_f' + "{:02d}".format(emoticon_id) + '.gif')
     for emoticon_id in range(1, 41):  # 兔斯基
